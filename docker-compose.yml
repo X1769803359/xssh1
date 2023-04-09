@@ -7,8 +7,7 @@ services:
       CRAWLAB_NODE_MASTER: "Y"
       CRAWLAB_MONGO_HOST: "mongo"
     volumes:
-      - "crawlab-pvc/root:/root"
-      - "crawlab-pvc/data:/data"
+      - "crawlab-pvc:/root"
     ports:    
       - "8080:8080"
     depends_on:
@@ -19,7 +18,7 @@ services:
     container_name: crawlab_example_mongo
     restart: always
     volumes:
-      - "crawlab-pvc/db:/data/db"
+      - "crawlab-pvc:/data/db"
     
 volumes:
   crawlab-pvc:
