@@ -7,8 +7,8 @@ services:
       CRAWLAB_NODE_MASTER: "Y"
       CRAWLAB_MONGO_HOST: "mongo"
     volumes:
-      - "crawlab-pvc:/root"
-      - "crawlab-pvc:/data"
+      - "crawlab-pvc/root:/root"
+      - "crawlab-pvc/data:/data"
     ports:    
       - "8080:8080"
     depends_on:
@@ -19,12 +19,9 @@ services:
     container_name: crawlab_example_mongo
     restart: always
     volumes:
-      - "crawlab-pvc:/data/db"
+      - "crawlab-pvc/db:/data/db"
     
 volumes:
   crawlab-pvc:
-    driver_opts:
-      class: csi-okteto-standard
-  crawlab-pvc1:
     driver_opts:
       class: csi-okteto-standard
