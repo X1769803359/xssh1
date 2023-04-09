@@ -25,7 +25,6 @@ volumes:
   crawlab-pvc:
     driver_opts:
       class: csi-okteto-standard
-volumes:
   crawlab-pvc1:
     driver_opts:
       class: csi-okteto-standard
