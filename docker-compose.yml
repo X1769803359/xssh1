@@ -8,9 +8,9 @@ services:
       CRAWLAB_MONGO_HOST: "mongo"
     volumes:
       - "crawlab-pvc:/data"
+      - "crawlab-pvc:/root/.crawlab"
     ports:    
       - "8080:8080"
-      - "9666:9666"
     depends_on:
       - mongo
 
